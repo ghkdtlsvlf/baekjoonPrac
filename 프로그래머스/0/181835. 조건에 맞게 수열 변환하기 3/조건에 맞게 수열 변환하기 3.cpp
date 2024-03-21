@@ -3,14 +3,13 @@
 
 using namespace std;
 
-vector<int> solution(vector<int> arr, int k) {
+vector<int> solution(vector<int> arr, int k)
+{
     vector<int> answer;
-    if (k % 2 == 0) {
-        for (auto i : arr) answer.push_back( i + k);
-    }
-    else {
-        for (auto i : arr) answer.push_back(i * k);
-    }
+
+    for(int i=0; i<arr.size(); i++)
+        k%2==1 ? arr[i]*=k : arr[i]+=k;
+    answer=arr;
 
     return answer;
 }
